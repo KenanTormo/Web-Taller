@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller de Microinformática</title>
+
+    <meta name="author" content="Taller de Microinformática">
+    <meta name="description" content="Taller de microinformática: reparación de ordenadores, eliminación de virus, formateo e instalación de redes.">
+    <meta name="keywords" content="taller informático, reparación de ordenadores, redes, virus, formateo">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Index.css">
+
+    <script src="JS/Main.js" defer></script>
+</head>
+<body>
+
+    <header id="inicio">
+        <h1>Taller de Microinformática</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <button type="button" id="btn-tema">Tema oscuro</button>
+    </header>
+
+    <main>
+
+        <!-- Sección de servicios: titulares jerárquicos + 3 artículos (título, párrafo e imagen) -->
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <p>Reparamos y mantenemos tus equipos informáticos con rapidez y garantía, tanto para particulares como para empresas.</p>
+
+            <h3>Averías y mantenimientos habituales</h3>
+
+            <div class="buscador">
+                <label for="buscador">Buscar servicio:</label>
+                <input type="search" id="buscador" placeholder="Ej: virus, redes, ordenadores...">
+            </div>
+
+            <p id="sin-resultados">No hay ningún servicio que coincida con tu búsqueda.</p>
+
+            <div class="articulos-servicios">
+
+                <article>
+                    <h4>Reparación de ordenadores</h4>
+                    <p>Diagnóstico y reparación de sobremesas y portátiles: fallos de arranque, pantallas rotas, sustitución de componentes y limpieza interna de polvo y ventiladores.</p>
+                    <img src="Assests/Img/manteniment.jpg" alt="Reparación de ordenador portátil">
+                </article>
+
+                <article>
+                    <h4>Eliminación de virus y formateo</h4>
+                    <p>Eliminación de virus, malware y software malicioso, además de formateo completo con reinstalación del sistema operativo y copia de seguridad de tus archivos.</p>
+                    <img src="Assests/Img/malware.jpg" alt="Eliminación de virus y formateo de equipo">
+                </article>
+
+                <article>
+                    <h4>Instalación y configuración de redes</h4>
+                    <p>Configuración de redes domésticas y de oficina, instalación de routers y repetidores WiFi, cableado estructurado y solución de problemas de conexión.</p>
+                    <img src="Assests/Img/xarxes.jpg" alt="Instalación y configuración de red WiFi">
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Sección del formulario de solicitud de asistencia técnica -->
+        <section id="solicitud">
+            <h2>Solicita asistencia técnica</h2>
+            <p>Rellena el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+
+            <form action="/enviar-consulta.php" method="post" novalidate>
+
+                <!-- 1. type="text" - obligatorio -->
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+
+                <!-- 2. type="email" - obligatorio -->
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+
+                <!-- 3. type="tel" -->
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="960 00 00 00">
+
+                <!-- 4. type="radio" con 3 opciones -->
+                <fieldset>
+                    <legend>Tipo de equipo:</legend>
+
+                    <input type="radio" id="equipo-sobremesa" name="equipo" value="sobremesa">
+                    <label for="equipo-sobremesa">Sobremesa</label>
+
+                    <input type="radio" id="equipo-portatil" name="equipo" value="portatil">
+                    <label for="equipo-portatil">Portátil</label>
+
+                    <input type="radio" id="equipo-otro" name="equipo" value="otro">
+                    <label for="equipo-otro">Otro</label>
+                </fieldset>
+
+                <!-- 5. type="date" -->
+                <label for="fecha">Fecha preferida de cita:</label>
+                <input type="date" id="fecha" name="fecha">
+
+                <!-- Elemento select, no es de tipo input pero también se pide estilarlo -->
+                <label for="servicio">Servicio que necesitas:</label>
+                <select id="servicio" name="servicio">
+                    <option value="hardware">Reparación de hardware</option>
+                    <option value="software">Virus / formateo</option>
+                    <option value="redes">Redes</option>
+                </select>
+
+                <!-- Textarea, obligatorio -->
+                <label for="mensaje">Describe la avería:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué le pasa a tu equipo..." required></textarea>
+
+                <button type="submit">Enviar consulta</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer id="contacto">
+
+        <h2>Contacto</h2>
+
+        <address>
+            <p>Taller de Microinformática</p>
+            <p>Calle Ejemplo, 12 - 46001 Valencia</p>
+            <p>Teléfono: <a href="tel:+34960000000">960 00 00 00</a></p>
+            <p>Email: <a href="mailto:info@tallermicroinformatica.com">info@tallermicroinformatica.com</a></p>
+        </address>
+
+        <iframe
+            src="https://www.google.com/maps?q=X%C3%A0tiva,+Valencia,+Espa%C3%B1a&output=embed"
+            width="400"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación del Taller de Microinformática en Xàtiva">
+        </iframe>
+
+        <p>Horario: Lunes a Viernes de 9:00 a 14:00 y de 16:00 a 19:30</p>
+
+        <p>
+            &copy; 2026 Taller de Microinformática. Este contenido está bajo licencia
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="license noopener">
+                Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)
+            </a>.
+        </p>
+
+    </footer>
+
+</body>
+</html>
